@@ -26,15 +26,104 @@
             --shadow: 0 8px 32px rgba(0, 20, 60, 0.5);
             --shadow-hover: 0 12px 40px rgba(0, 30, 80, 0.6);
             --glow: 0 0 30px rgba(74, 158, 255, 0.15);
-            --lang-bar-bg: rgba(74, 158, 255, 0.1);
-            --info-item-bg: rgba(74, 158, 255, 0.08);
-            --info-item-hover-bg: rgba(74, 158, 255, 0.15);
-            --tag-bg: rgba(74, 158, 255, 0.1);
-            --tag-border: rgba(74, 158, 255, 0.2);
-            --tag-hover-bg: rgba(74, 158, 255, 0.2);
             --contact-link-bg: rgba(74, 158, 255, 0.08);
             --contact-link-hover-bg: rgba(74, 158, 255, 0.15);
             --highlight-bg: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(255, 107, 157, 0.1));
+            --hero-shadow: 0 0 60px rgba(74, 158, 255, 0.4), 0 0 120px rgba(74, 158, 255, 0.1);
+            --hero-shadow-pulse: 0 0 80px rgba(74, 158, 255, 0.6), 0 0 160px rgba(74, 158, 255, 0.2);
+            --sticker-shadow: 0 15px 40px rgba(74, 158, 255, 0.25);
+        }
+        [data-theme="light"] {
+            --bg: #e8f4fc;
+            --bg-card: rgba(255, 255, 255, 0.7);
+            --bg-card-hover: rgba(255, 255, 255, 0.85);
+            --primary: #1a7fd4;
+            --primary-light: #2a9dff;
+            --primary-glow: rgba(26, 127, 212, 0.2);
+            --secondary: #e84a7a;
+            --secondary-light: #ff7aa3;
+            --accent: #e6a817;
+            --text: #1a2a3a;
+            --text-light: #4a5a6a;
+            --text-muted: #8a9aaa;
+            --border: rgba(26, 127, 212, 0.2);
+            --border-hover: rgba(26, 127, 212, 0.4);
+            --shadow: 0 8px 32px rgba(0, 40, 80, 0.12);
+            --shadow-hover: 0 12px 40px rgba(0, 50, 100, 0.18);
+            --glow: 0 0 30px rgba(26, 127, 212, 0.1);
+            --contact-link-bg: rgba(26, 127, 212, 0.06);
+            --contact-link-hover-bg: rgba(26, 127, 212, 0.12);
+            --highlight-bg: linear-gradient(135deg, rgba(26, 127, 212, 0.08), rgba(232, 74, 122, 0.08));
+            --hero-shadow: 0 0 60px rgba(26, 127, 212, 0.25), 0 0 120px rgba(26, 127, 212, 0.08);
+            --hero-shadow-pulse: 0 0 80px rgba(26, 127, 212, 0.35), 0 0 160px rgba(26, 127, 212, 0.12);
+            --sticker-shadow: 0 15px 40px rgba(26, 127, 212, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            transition: background 0.5s ease, color 0.5s ease;
+        }
+
+        /* Language Toggle Switch */
+        .lang-toggle {
+            position: fixed;
+            top: 1.2rem;
+            right: 5.5rem;
+            z-index: 1100;
+            width: 52px;
+            height: 28px;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-toggle:hover {
+            border-color: var(--border-hover);
+            transform: scale(1.05);
+        }
+
+        .lang-toggle .lang-knob {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            font-size: 0.75rem;
+            transform: translateX(0);
+        }
+
+        [data-lang="it"] .lang-toggle .lang-knob {
+            transform: translateX(24px);
+        }
+
+        .lang-toggle .lang-icon {
+            transition: opacity 0.3s ease;
+        }
+
+        .lang-toggle .lang-en {
+            opacity: 1;
+            position: absolute            --highlight-bg: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(255, 107, 157, 0.1));
             --competition-bg: linear-gradient(135deg, rgba(74, 158, 255, 0.05), rgba(255, 107, 157, 0.05));
             --timeline-line: linear-gradient(180deg, var(--primary), var(--secondary));
             --hero-shadow: 0 0 60px rgba(74, 158, 255, 0.4), 0 0 120px rgba(74, 158, 255, 0.1);
